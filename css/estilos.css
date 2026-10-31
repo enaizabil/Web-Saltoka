@@ -207,6 +207,28 @@ p { margin: 0 0 1em; }
 .press { font-size: .92rem; color: var(--muted); }
 .press a { margin-right: 10px; white-space: nowrap; }
 
+/* Historia: línea de tiempo */
+.timeline { list-style: none; margin: 0; padding: 0; position: relative; max-width: 52rem; }
+.timeline::before {
+  content: ""; position: absolute; left: 33px; top: 8px; bottom: 8px;
+  width: 3px; border-radius: 3px; background: var(--line);
+}
+.timeline li { display: grid; grid-template-columns: 68px 1fr; gap: 20px; padding-bottom: 28px; position: relative; }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline .year {
+  position: relative; z-index: 1; align-self: start; justify-self: center;
+  background: var(--red); color: var(--on-red); font-weight: 850; font-size: .95rem;
+  border-radius: 999px; padding: 5px 10px; box-shadow: 0 0 0 5px var(--surface);
+}
+.timeline h3 { margin: 3px 0 .3em; }
+.timeline p { margin: 0; }
+
+/* Historial por temporadas */
+.seasons { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
+.season { background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--red); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
+.season h3 { margin-bottom: .6em; }
+.season .list { margin: 0; }
+
 /* Galería */
 .gallery { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
 @media (max-width: 700px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
